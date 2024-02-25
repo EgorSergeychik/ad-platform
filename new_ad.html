@@ -8,7 +8,45 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Нове оголошення</title>
 </head>
-<body>
-
+<body link="red" vlink="#d4a373" bgcolor="#fefae0">
+    <div>
+        <a href="index.html">
+            <h1>Оголошення.ua</h1>
+        </a>
+        <a href="about.html">Про сайт</a>
+        <a href="new_ad.html">
+            <button>Створити оголошення</button>
+        </a>
+        <h2>Створити оголошення</h2>
+    </div>
+    <div>
+        <form action="new_ad.php" method="post">
+            <div>
+                <p>Назва</p>
+                <input type="text">
+            </div>
+            <div>
+                <p>Ціна</p>
+                <input type="number">
+            </div>
+            <div>
+                <p>Категорія</p>
+                <select>
+                    <option>Електроніка</option>
+                    <option>Одяг</option>
+                    <option>Для дому</option>
+                    <option>Нерухомість</option>
+                    <option>Авто</option>
+                </select>
+            </div>
+            <div>
+                <p>Опис</p>
+                <textarea></textarea>
+            </div>
+            <div>
+                <button>Створити</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
