@@ -10,44 +10,45 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <div>
-        <a href="index.html">
-            <h1>Оголошення.ua</h1>
-        </a>
-        <a href="about.html">Про сайт</a>
-        <a href="new_ad.html">
-            <button>Створити оголошення</button>
-        </a>
-        <h2>Створити оголошення</h2>
-    </div>
-    <div>
-        <form action="new_ad.php" method="post">
-            <div>
-                <p>Назва</p>
-                <input type="text">
-            </div>
-            <div>
-                <p>Ціна</p>
-                <input type="number">
-            </div>
-            <div>
-                <p>Категорія</p>
-                <select>
-                    <option>Електроніка</option>
-                    <option>Одяг</option>
-                    <option>Для дому</option>
-                    <option>Нерухомість</option>
-                    <option>Авто</option>
-                </select>
-            </div>
-            <div>
-                <p>Опис</p>
-                <textarea></textarea>
-            </div>
-            <div>
-                <button>Створити</button>
-            </div>
-        </form>
-    </div>
+<div id="nav">
+    <a href="index.html"><h1>Оголошення.ua</h1></a>
+    <a class="btn btn-menu" href="about.html">Про сайт</a>
+    <a class="btn btn-menu" href="new_ad.html">Створити оголошення</a>
+</div>
+<div class="center width-33 form-container">
+    <form action="new_ad.php" method="post">
+        <div class="form-group">
+            <p><span class="form-label">Назва</span></p>
+            <input type="text" minlength="10">
+        </div>
+        <div class="form-group">
+            <p><span class="form-label">Ціна</span></p>
+            <input type="number" min="0">
+            <select>
+                <option>UAH</option>
+                <option>USD</option>
+                <option>EUR</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <p><span class="form-label">Категорія</span></p>
+            <select>
+                <option>Електроніка</option>
+                <option>Одяг</option>
+                <option>Для дому</option>
+                <option>Нерухомість</option>
+                <option>Авто</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <p><span class="form-label">Опис</span></p>
+            <textarea></textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-success" value="Створити">
+            <input type="reset" class="btn btn-danger" value="Стрети">
+        </div>
+    </form>
+</div>
 </body>
 </html>

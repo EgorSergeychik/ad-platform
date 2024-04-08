@@ -55,17 +55,14 @@ ul li {
 ol {
     list-style-type: decimal-leading-zero;
 }
-ol li {
-    color: #007BFF;
-}
+
 dl dt {
     font-weight: bold;
     font-size: 20px;
-    color: #555;
+    color: #000000;
 }
 dl dd {
-    margin-left: 20px;
-    background-color: #c0c0c0;
+    margin-left: 3%;
     display: inline-block;
 }
 
@@ -122,6 +119,7 @@ dl dd {
     width: 100%;
     height: 60%;
     object-fit: scale-down;
+    background-color: #f6f6f6;
 }
 
 .card > a {
@@ -148,4 +146,255 @@ dl dd {
     margin: 0;
     font-size: 18px;
     font-weight: bold;
+}
+
+a[href="#nav"] {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px;
+}
+
+.btn {
+    display: inline;
+    padding: 10px;
+    text-align: center;
+    background-color: #ffffff;
+    color: #06090e;
+    text-decoration: none;
+    border: 1px solid #000000;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #d7d7d7;
+}
+
+.btn-primary {
+    background-color: #007BFF;
+    border-color: #006ce1;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #5a6268;
+    color: #ffffff;
+}
+
+.btn-secondary:hover {
+    background-color: #4b545c;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #c82333;
+    color: #ffffff;
+}
+
+.btn-danger:hover {
+    background-color: #a71d2a;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #1e7d34;
+    color: #ffffff;
+}
+
+.btn-success:hover {
+    background-color: #1e7e34;
+}
+
+.btn-menu {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    border: 1px solid #006ce1;
+}
+
+.btn-menu:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.center {
+    margin: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.width-75 {
+    width: 75%;
+}
+
+.width-70 {
+    width: 70%;
+}
+
+.width-50 {
+    width: 50%;
+}
+
+.width-33 {
+    width: 33.33%;
+}
+
+.width-25 {
+    width: 25%;
+}
+
+.width-20 {
+    width: 20%;
+}
+
+.blue {
+    color: #007BFF;
+}
+
+.red {
+    color: #dc3545;
+}
+
+.form-container {
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    padding: 1rem;
+    margin-top: 10px;
+    background-color: #ffffff;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-container p {
+    margin: 0;
+}
+
+.form-container input[type="text"] {
+    width: 100%;
+    padding: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-container input[type="number"] {
+    width: 25%;
+    padding: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-container select {
+    width: 25%;
+    padding: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-container input + select {
+    width: 12%;
+}
+
+.form-container textarea {
+    width: 100%;
+    height: 10em;
+    padding: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: none;
+}
+
+.item-container {
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    padding: 1rem;
+    margin-top: 10px;
+    background-color: #ffffff;
+}
+
+.item-header {
+    text-align: center;
+}
+
+.item-header p {
+    margin: 0;
+}
+
+.item-header p:first-child {
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.item-header .price {
+    text-align: right;
+    font-size: x-large;
+    color: #1e7d34;
+    padding: 2%;
+}
+
+.item-category {
+    font-size: 0.9em;
+}
+
+.item-category a {
+    margin: 0;
+    text-decoration: underline;
+}
+
+.item-category a:visited {
+    color: #000000;
+}
+
+.item-category a:link {
+    color: #6f6f6f;
+}
+
+.item-category a:hover {
+    color: #007BFF;
+}
+
+.item-category a:active {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.item-category a:after {
+    content: '/';
+}
+
+.item-category a:last-child:after {
+    content: '';
+}
+
+.item-container img {
+    width: auto;
+    height: 25em;
+    background-color: #f6f6f6;
+}
+
+.item-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-description p:first-child {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.item-description p {
+    margin: 0;
 }
