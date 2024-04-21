@@ -29,13 +29,14 @@
             </div>
             <div style="text-align: center">
                 <button class="btn btn-success">Купити</button>
-                <button class="btn btn-secondary">Написати</button>
+                <button class="btn btn-secondary" id="message_btn">Написати</button>
             </div>
             <div>
                 <dl>
                     <dt>Контакти</dt>
                     <dd>Телефон: 0981234567</dd>
                     <dd>Пошта: my_amazing_email@email.com</dd>
+                    <dd>Телеграм: <a href="#" id="telegram_link">Посилання</a></dd>
                 </dl>
             </div>
         </div>
@@ -60,5 +61,26 @@
             </div>
         </div>
     </div>
+<script>
+    let message_button = document.querySelector('#message_btn');
+
+    message_button.addEventListener('click', function () {
+        let message = prompt('Введіть ваше повідомлення:', 'Привіт! Я хочу купити ваш товар.');
+
+        if (message) {
+            alert('Повідомлення надіслано!');
+        }
+    });
+
+    // telegram link
+    let telegram_link = document.getElementById('telegram_link');
+    telegram_link.addEventListener('click', function (event) {
+        event.preventDefault();
+        if (confirm('Відкрити телеграм?')) {
+            location.href = 'https://t.me/egor_sergeychik';
+        }
+    });
+</script>
+<script src="script.js"></script>
 </body>
 </html>

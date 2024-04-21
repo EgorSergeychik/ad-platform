@@ -398,3 +398,56 @@ a[href="#nav"] {
 .item-description p {
     margin: 0;
 }
+
+.hidden {
+    display: none;
+}
+
+.qna-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+}
+
+.qna-header {
+    height: 10%;
+    background-color: #007BFF;
+    padding: 0.3rem;
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+    color: #f4f4f4;
+}
+
+.qna-header button {
+    float: right;
+    background-color: #007BFF;
+    color: #f4f4f4;
+    border: none;
+    cursor: pointer;
+
+}
+
+.qna-content {
+    padding: 1rem;
+}
+
+.qna-content select {
+    width: 100%;
+    padding: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.qna-answer {
+    margin-top: 0.3rem;
+    padding: 0.3rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+
+    height: 10rem;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+}

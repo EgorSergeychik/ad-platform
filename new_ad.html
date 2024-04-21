@@ -16,14 +16,14 @@
     <a class="btn btn-menu" href="new_ad.html">Створити оголошення</a>
 </div>
 <div class="center width-33 form-container">
-    <form action="new_ad.php" method="post">
+    <form method="post">
         <div class="form-group">
             <p><span class="form-label">Назва</span></p>
-            <input type="text" minlength="10">
+            <input type="text" minlength="10" id="product_name" required>
         </div>
         <div class="form-group">
             <p><span class="form-label">Ціна</span></p>
-            <input type="number" min="0">
+            <input type="number" min="0" required>
             <select>
                 <option>UAH</option>
                 <option>USD</option>
@@ -50,5 +50,28 @@
         </div>
     </form>
 </div>
+<script>
+    let product_name = document.querySelector('#product_name');
+    let form = document.querySelector('form');
+
+    form.addEventListener('submit', function (event) {
+        if (form.checkValidity()) {
+            addNewProduct();
+        }
+    })
+
+    function addNewProduct() {
+        let product_name_value = product_name.value;
+
+        if (product_name_value.length >= 20) {
+            alert('Назва товару повинна містити не більше 20 символів!');
+            return;
+        }
+
+        alert(`Ваш товар "${product_name_value}" успішно додано!`);
+    }
+</script>
+<script src="script.js"></script>
+<script src="last_task.js"></script>
 </body>
 </html>
