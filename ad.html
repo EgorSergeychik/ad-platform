@@ -36,7 +36,6 @@
                     <dt>Контакти</dt>
                     <dd>Телефон: 0981234567</dd>
                     <dd>Пошта: my_amazing_email@email.com</dd>
-                    <dd>Телеграм: <a href="#" id="telegram_link">Посилання</a></dd>
                 </dl>
             </div>
         </div>
@@ -69,15 +68,6 @@
 
         if (message) {
             alert('Повідомлення надіслано!');
-        }
-    });
-
-    // telegram link
-    let telegram_link = document.getElementById('telegram_link');
-    telegram_link.addEventListener('click', function (event) {
-        event.preventDefault();
-        if (confirm('Відкрити телеграм?')) {
-            location.href = 'https://t.me/egor_sergeychik';
         }
     });
 </script>
