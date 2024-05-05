@@ -13,7 +13,9 @@
 <div id="nav">
     <a href="index.html"><h1>Оголошення.ua</h1></a>
     <a class="btn btn-menu" href="about.html">Про сайт</a>
-    <a class="btn btn-menu" href="new_ad.html">Створити оголошення</a>
+    <a class="btn btn-menu" data-auth="required" href="new_ad.html">Створити оголошення</a>
+    <button id="login" class="btn btn-menu" data-auth="not-required">Увійти</button>
+    <button id="logout" class="btn btn-menu" data-auth="required">Вийти</button>
 </div>
 <h2>Про сайт</h2>
 <div>
@@ -22,6 +24,7 @@
     <p><span class="blue">Оголошення.ua</span> також надає користувачам можливість створювати власні оголошення, надаючи їм засоби для детального опису товару або послуги, завантаження фотографій та встановлення контактної інформації. Це забезпечує прозорість та відкритість між продавцем та покупцем, сприяючи безпечним та ефективним торговим відносинам.</p>
     <p>Все це робить Оголошення.ua ідеальним місцем для тих, хто шукає спосіб виставити свої товари на продаж або знайти потрібні товари в одному зручному місці.</p>
     <p class="text-center">Ми використовуємо сервіс для доставки <a href="https://novaposhta.ua/" class="red other-site">Нова пошта</a>.</p>
+    <button id="rm-listener">Click to remove event listener</button>
 </div>
 <div class="center width-33">
     <table class="stats-table">

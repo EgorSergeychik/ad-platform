@@ -37,7 +37,9 @@
     <div id="nav">
         <a href="index.html"><h1>Оголошення.ua</h1></a>
         <a class="btn btn-menu" href="about.html">Про сайт</a>
-        <a class="btn btn-menu" href="new_ad.html">Створити оголошення</a>
+        <a class="btn btn-menu" data-auth="required" href="new_ad.html">Створити оголошення</a>
+        <button id="login" class="btn btn-menu" data-auth="not-required">Увійти</button>
+        <button id="logout" class="btn btn-menu" data-auth="required">Вийти</button>
     </div>
     <div id="search">
         <input type="text">
@@ -46,23 +48,23 @@
     <div>
         <h2>Категорії</h2>
         <div class="categories">
-            <a href="https://google.com" target="_blank">
+            <a href="" onclick="filterAdsByCategory('electronics')">
                 <img src="svg/phone.svg">
                 <p>Електроніка</p>
             </a>
-            <a href="">
+            <a href="" onclick="filterAdsByCategory('clothes')">
                 <img src="svg/clothes.svg">
                 <p>Одяг</p>
             </a>
-            <a href="">
+            <a href="" onclick="filterAdsByCategory('for_home')">
                 <img src="svg/table.svg">
                 <p>Для дому</p>
             </a>
-            <a href="">
+            <a href="" onclick="filterAdsByCategory('house')">
                 <img src="svg/house.svg">
                 <p>Нерухомість</p>
             </a>
-            <a href="">
+            <a href="" onclick="filterAdsByCategory('transport')">
                 <img src="svg/car.svg">
                 <p>Авто</p>
             </a>
@@ -70,7 +72,7 @@
     </div>
     <div class="items">
         <h2>Останні оголошення</h2>
-        <div class="card">
+        <div class="card" data-category="clothes">
             <a href="ad.html">
                 <img src="https://allstars.ua/upload/iblock/fc1/fc1e52549ee24ec2e18eed0d31e42741.jpg">
                 <div class="card-content">
@@ -80,7 +82,7 @@
                 </div>
             </a>
         </div>
-        <div class="card">
+        <div class="card" data-category="electronics">
             <a href="ad.html">
                 <img src="https://ireland.apollo.olxcdn.com/v1/files/pa5zwugooih23-UA/image;s=1000x700">
                 <div class="card-content">
@@ -90,7 +92,7 @@
                 </div>
             </a>
         </div>
-        <div class="card">
+        <div class="card" data-category="transport">
             <a href="ad.html">
                 <img src="https://ireland.apollo.olxcdn.com/v1/files/q43c2gq69l5m2-UA/image;s=1000x700">
                 <div class="card-content">
@@ -100,7 +102,7 @@
                 </div>
             </a>
         </div>
-        <div class="card">
+        <div class="card" data-category="electronics">
             <a href="ad.html">
                 <img src="https://ireland.apollo.olxcdn.com/v1/files/ygc894sugcjh2-UA/image;s=1000x700">
                 <div class="card-content">
@@ -169,8 +171,29 @@
                     <p class="card-date">Datetime</p>
                 </div>
             </a>
+        </div>
     </div>
     <a href="#nav" class="btn btn-secondary">Наверх</a>
+    <script>
+        function randomInt(min, max) {
+            const minCeiled = Math.ceil(min);
+            const maxFloored = Math.floor(max);
+            return Math.floor(Math.random() * (maxFloored - minCeiled)) + minCeiled;
+        }
+
+        function randomCategory() {
+            let categories = ['electronics', 'clothes', 'transport', 'house', 'for_home'];
+            let randomIndex = randomInt(0, categories.length);
+            return categories[randomIndex];
+        }
+
+        let cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            if (card.dataset.category === undefined) {
+                card.dataset.category = randomCategory();
+            }
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

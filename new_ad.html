@@ -13,7 +13,9 @@
 <div id="nav">
     <a href="index.html"><h1>Оголошення.ua</h1></a>
     <a class="btn btn-menu" href="about.html">Про сайт</a>
-    <a class="btn btn-menu" href="new_ad.html">Створити оголошення</a>
+    <a class="btn btn-menu" data-auth="required" href="new_ad.html">Створити оголошення</a>
+    <button id="login" class="btn btn-menu" data-auth="not-required">Увійти</button>
+    <button id="logout" class="btn btn-menu" data-auth="required">Вийти</button>
 </div>
 <div class="center width-33 form-container">
     <form method="post">
@@ -72,5 +74,6 @@
     }
 </script>
 <script src="script.js"></script>
+<script src="temp.js"></script>
 </body>
 </html>
