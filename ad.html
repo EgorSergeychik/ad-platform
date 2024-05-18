@@ -76,21 +76,9 @@
 
         if (message) {
             alert('Повідомлення надіслано!');
-        }
-    });
 
-    // Краще використовувати один обробник подій, щоб не збільшувати при відміні надсилання
-    // зроблено так для демонстрації двох обробників на одному елементі
-    message_button.addEventListener('click', function () {
-        let counter = document.querySelector('#msg-counter span');
-
-        counter.textContent = parseInt(counter.textContent) + 1;
-    });
-</script>
-<script>
-    document.querySelector('.item-description ul').addEventListener('click', function (event) {
-        if (event.target.tagName === 'LI') {
-            event.target.classList.toggle('grey');
+            let counter = document.querySelector('#msg-counter span');
+            counter.textContent = parseInt(counter.textContent) + 1;
         }
     });
 </script>
