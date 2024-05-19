@@ -137,6 +137,12 @@
             });
         }
     });
+
+    active_tags_list.addEventListener('click', function (event) {
+        if (event.target.classList.contains('tag')) {
+            event.target.remove();
+        }
+    });
 </script>
 <script>
     let product_name = document.querySelector('#product_name');
