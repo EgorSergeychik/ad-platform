@@ -47,11 +47,97 @@
             <textarea></textarea>
         </div>
         <div class="form-group">
+            <p><span class="form-label">Теги</span></p>
+            <div class="form-tags-area">
+                <ul class="form-tags"></ul>
+            </div>
+        </div>
+        <div class="form-group">
             <input type="submit" class="btn btn-success" value="Створити">
             <input type="reset" class="btn btn-danger" value="Стрети">
         </div>
     </form>
 </div>
+<div class="form-container width-25 all-tags-list" hidden>
+    <h2>Доступні теги</h2>
+    <ul class="form-tags">
+        <li class="tag">Техніка</li>
+        <li class="tag">Телефон</li>
+        <li class="tag">Куртка</li>
+        <li class="tag">Кросівки</li>
+        <li class="tag">тег1</li>
+        <li class="tag">тег2</li>
+        <li class="tag">тег3</li>
+        <li class="tag">тег4</li>
+        <li class="tag">тег5</li>
+    </ul>
+</div>
+<script>
+    let tags_area = document.querySelector('.form-tags-area');
+    let active_tags_list = document.querySelector('.form-tags-area .form-tags');
+    let all_tags_list = document.querySelector('.all-tags-list');
+
+    function selectTags() {
+        tags_area.style.border = '3px solid black';
+        all_tags_list.hidden = false;
+    }
+
+    function unselectTags() {
+        tags_area.style.border = '1px solid #ddd';
+        all_tags_list.hidden = true;
+    }
+
+    // ефект active та відображення всіх тегів
+    tags_area.addEventListener('click', selectTags);
+    active_tags_list.addEventListener('click', selectTags);
+
+
+    // прибирання ефекту active та закриття вікна з тегами
+    document.addEventListener('click', function (event) {
+        if (event.target !== tags_area && event.target !== all_tags_list && event.target !== active_tags_list) {
+            unselectTags();
+        }
+    })
+
+    all_tags_list.addEventListener('mousedown', function (event) {
+        if (event.target.classList.contains('tag')) {
+            // "обрання" (шляхом копіювання) тегу
+            let chosen_tag = event.target.cloneNode(true);
+            chosen_tag.style.position = 'absolute';
+            chosen_tag.style.zIndex = '1000';
+            document.body.appendChild(chosen_tag);
+
+            // переміщення тегу за мишкою
+            function moveAt(pageX, pageY) {
+                chosen_tag.style.left = pageX - chosen_tag.offsetWidth / 2 + 'px';
+                chosen_tag.style.top = pageY - chosen_tag.offsetHeight / 2 + 'px';
+            }
+
+            function onMouseMove(event) {
+                moveAt(event.pageX, event.pageY);
+            }
+
+            moveAt(event.pageX, event.pageY);
+            document.addEventListener('mousemove', onMouseMove);
+
+            // відпускання тегу
+            chosen_tag.addEventListener('mouseup', function (event) {
+                document.removeEventListener('mousemove', onMouseMove);
+                chosen_tag.hidden = true; // тимчасово приховую тег, щоб перевірити, чи він над зоною з тегами
+                let elem_below = document.elementFromPoint(event.clientX, event.clientY); // власне зона, куди перенесено тег
+                chosen_tag.hidden = false;
+
+                // якщо тег перенесено в зону з тегами, то він додається до списку активних тегів
+                if (elem_below === tags_area || elem_below.closest('.form-tags-area')) {
+                    active_tags_list.appendChild(chosen_tag);
+                    chosen_tag.style.position = 'static';
+                } else { // якщо некорректна зона - видаляю
+                    chosen_tag.remove();
+                }
+            });
+        }
+    });
+</script>
 <script>
     let product_name = document.querySelector('#product_name');
     let form = document.querySelector('form');

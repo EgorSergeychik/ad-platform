@@ -86,8 +86,8 @@ function authenticate() {
 
 authenticate();
 
-document.addEventListener('click', function () {
-    if (event.target.dataset.scalableImage != undefined) {
+document.addEventListener('click', function (event) {
+    if (event.target.dataset.scalableImage !== undefined) {
         event.preventDefault();
 
         let img = document.createElement('img');

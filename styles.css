@@ -479,3 +479,47 @@ a[href="#nav"] {
 .grey {
     background-color: #ddd;
 }
+
+.buy-now {
+    padding: 0.5rem;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #28a745;
+    color: #f4f4f4;
+
+    position: relative;
+    bottom: 50px;
+}
+
+.tag {
+    background-color: #007BFF;
+    color: #f4f4f4;
+    padding: 0.2rem;
+    border-radius: 5px;
+    margin-right: 0.5rem;
+    text-align: center;
+    list-style-type: none;
+}
+
+.tag:before {
+    content: '#';
+}
+
+.form-tags-area {
+    margin-top: 5px;
+    margin-bottom: 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-tags {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.all-tags-list {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}

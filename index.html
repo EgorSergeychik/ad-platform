@@ -194,6 +194,25 @@
             }
         });
     </script>
+    <script>
+        let items = document.querySelector('.items');
+        items.addEventListener('mouseover', function (event) {
+            let card = event.target.closest('.card');
+            if (card && card.querySelector('.buy-now') === null) {
+                let badge = document.createElement('div');
+                badge.classList.add('buy-now');
+                badge.textContent = 'Купити зараз';
+                card.querySelector('.card-content').appendChild(badge);
+            }
+        });
+        items.addEventListener('mouseout', function (event) {
+            let card = event.target.closest('.card');
+            let buyNow = card.querySelector('.buy-now');
+            if (card && buyNow && buyNow !== event.relatedTarget) {
+                buyNow.remove();
+            }
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
